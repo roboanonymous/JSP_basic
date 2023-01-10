@@ -14,10 +14,11 @@ import javax.servlet.http.HttpSession;
 public class demo_servlet extends HttpServlet {
 	public void doGet(HttpServletRequest request , HttpServletResponse response) throws IOException, ServletException
 	{
-		String name = "Samyak" ;
+		Student s = new Student(1 , "Samyak");
 		
 		
-		request.setAttribute("label", name);
+		
+		request.setAttribute("Student", s);
 		RequestDispatcher rd =  request.getRequestDispatcher("Display.jsp");
 		
 		rd.forward(request, response);
